@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Laços de repetição</title>
+    </head>
+    <body>
+        <script>
+            var imcAluno;
+            var qtdeAluno = 0;
+            var somaAltura = 0.0;
+            var mediaAltura = 0.0;
+            var cont = 1;
+            var maiorAltura = 0.0;
+            var menorAltura = 0.0;
+
+            while (qtdeAluno <= 4) {
+                alert("Entre com os dados do aluno");
+                var nomeAluno = prompt("Digite o nome do aluno:");
+                var idadeAluno = prompt("Digite a idade do aluno:");
+                var alturaAluno = parseFloat(prompt("Digite a altura do aluno em metros:"));
+                var pesoAluno = prompt("Digite o peso do aluno:");
+                imcAluno = pesoAluno / (alturaAluno**2);
+                qtdeAluno = qtdeAluno + 1;
+                somaAltura = somaAltura + alturaAluno;
+                mediaAltura = somaAltura / qtdeAluno;
+                if (imcAluno < 18.5) {
+                    alert("Aluno com IMC muito baixo: " +imcAluno);
+                    document.write("<br>");
+                    document.write("Nome: " +nomeAluno);
+                    document.write("<br>");
+                    document.write("IMC: " +imcAluno);
+                    document.write("<br>");
+                    document.write("Classificação: Magreza");
+                    document.write("<br>");
+                } else if (imcAluno >= 25 && imcAluno <= 29.9) {
+                    alert("Aluno com IMC acima do normal: " +imcAluno);
+                    document.write("<br>");
+                    document.write("Nome: " +nomeAluno);
+                    document.write("<br>");
+                    document.write("IMC: " +imcAluno);
+                    document.write("<br>");
+                    document.write("Classificação: Sobrepeso");
+                    document.write("<br>");
+                } else if (imcAluno >= 30 && imcAluno <= 39.9) {
+                    alert("Aluno com IMC alto " +imcAluno);
+                    document.write("<br>");
+                    document.write("Nome: " +nomeAluno);
+                    document.write("<br>");
+                    document.write("IMC: " +imcAluno);
+                    document.write("<br>");
+                    document.write("Classificação: Obesidade Grau II");
+                    document.write("<br>");
+                } else if (imcAluno >= 40) {
+                    alert("Aluno com IMC muito alto: " +imcAluno);
+                    document.write("<br>");
+                    document.write("Nome: " +nomeAluno);
+                    document.write("<br>");
+                    document.write("IMC: " +imcAluno);
+                    document.write("<br>");
+                    document.write("Classificação: Obesidade Grau III");
+                    document.write("<br>");
+                } else {
+                    alert("Aluno com IMC normal! " +imcAluno);
+                    document.write("<br>");
+                    document.write("Nome: " +nomeAluno);
+                    document.write("<br>");
+                    document.write("IMC: " +imcAluno);
+                    document.write("<br>");
+                    document.write("Classificação: Normal");
+                    document.write("<br>");
+                }
+
+                if (cont == 1){
+                    maiorAltura = alturaAluno;
+                    menorAltura = alturaAluno;
+                }
+                if (alturaAluno > maiorAltura) {
+                    maiorAltura = alturaAluno
+                } else if (alturaAluno < menorAltura) {
+                    menorAltura = alturaAluno;
+                }
+                cont ++;
+            }
+            
+            document.write("<br>");
+            document.write("A média de altura é de: " +parseFloat(+mediaAltura));
+            document.write("<br>");
+            document.write("A maior altura digitada foi de: " + parseFloat(+maiorAltura));
+            document.write("<br>");
+            document.write("A menor altura digitada foi de: " + parseFloat(+menorAltura));
+            document.write("<br>");
+        </script>
+    </body>
+</html>
