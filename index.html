@@ -10,10 +10,10 @@
             var somaAltura = 0.0;
             var mediaAltura = 0.0;
             var cont = 1;
-            var maiorAltura = 0.0;
-            var menorAltura = 0.0;
+            var maiorImc = 0.0;
+            var menorImc = 0.0;
 
-            while (qtdeAluno <= 44) {
+            while (qtdeAluno <= 1) {
                 alert("Entre com os dados do aluno");
                 var nomeAluno = prompt("Digite o nome do aluno:");
                 var idadeAluno = prompt("Digite a idade do aluno:");
@@ -70,14 +70,15 @@
                     document.write("<br>");
                 }
 
-                if (cont == 1){
-                    maiorAltura = alturaAluno;
-                    menorAltura = alturaAluno;
+                if (cont == 1) {
+                    maiorImc = imcAluno;
+                    menorImc = imcAluno;
                 }
-                if (alturaAluno > maiorAltura) {
-                    maiorAltura = alturaAluno
-                } else if (alturaAluno < menorAltura) {
-                    menorAltura = alturaAluno;
+                if (imcAluno > maiorImc) {
+                    maiorImc = imcAluno;
+
+                } else if (imcAluno < menorImc) {
+                    menorImc = imcAluno;
                 }
                 cont ++;
             }
@@ -85,10 +86,9 @@
             document.write("<br>");
             document.write("A média de altura é de: " +parseFloat(+mediaAltura));
             document.write("<br>");
-            document.write("A maior altura digitada foi de: " + parseFloat(+maiorAltura));
+            document.write("O maior IMC da sala é de: " +maiorImc);
             document.write("<br>");
-            document.write("A menor altura digitada foi de: " + parseFloat(+menorAltura));
-            document.write("<br>");
+            document.write("O menor IMC da sala é de: " +menorImc)
         </script>
     </body>
 </html>
